@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/billboard.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+    <title>Billboard</title>
+</head>
+
+<body>
+<h1>BILLBOARD</h1>
+{% for Billboard in results %}
+<div class="container">
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+    <span class="signature">{{author}}</span>
+</div>
+{% empty %}
+<div class="no-message">
+    <div>No messages...</div>
+    <div>Click the '+' button to add a new message</div>
+</div>
+{% endfor %}
+<div id="toadd"></div>
+<div class="button-container" id="plus-div">
+    <button class="btn" id="add-btn"><i class="fa fa-plus"></i></button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'js/billboard.js' %}"></script>
+
+</body>
+
+</html>
